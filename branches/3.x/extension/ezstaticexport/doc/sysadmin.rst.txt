@@ -1,0 +1,121 @@
+Documentation de l'extension ezstaticexport
+===========================================
+
+Auteur
+------
+Jérôme Renard <jr@ez.no>
+
+But de cette documentation
+--------------------------
+Décrire le fonctionnement de l'extension ezstaticexport 
+ainsi que son interaction au niveau du système d'exploitation
+
+Installation de l'extension
+---------------------------
+Une fois le dossier de l'extension téléchargé, il suffit de le décompresser
+dans le répertoire extension, ce qui signifie qu'au final on doit avoir l'arborescence suivante
+
+::
+
+    ezpublish-root
+    |-- extension
+        |-- ezstaticexport
+        |...
+    |...
+
+Base de données et droits d'accès à MySQL
+-----------------------------------------
+Pour fonctionner, l'extension a besoin de créer des tables dans la base de données
+utilisée par l'instance eZ Publish. A l'heure ou ce document est écrit
+l'extension n'a besoin que de 4 tables spécifiques toutes préfixée avec le terme:
+"ezstaticexport_<nom>"
+
+Il est probable que l'extension aie au final besoin de plus de tables mais pas beaucoup
+plus, le nombre total de table sera très probablement inférieur à 10.
+
+Pour pouvoir installer les nouvelles tables, il faut que l'utilisateur aie les droits de "CREATE TABLE"
+sur la base de données utilisée par eZ Publish. Dans le cas ou il n'est pas envisageable d'obtenir ces droits
+pour des questions de sécurité. La création des tables pourra être faite soit manuellement en important le fichier
+schema.sql directement dans la base de données utilisée par eZ Publish, ou alors en utilisant
+phpMyAdmin (ou tout autre outil équivalent, MySQL Administrator par exemple) en important ce même fichier
+via l'interface du logiciel client.
+
+Pour importer le fichier via la ligne de commande la procédure suivante est recommandée:
+
+::
+
+    mysql -u <utilisateur> -p<mot de passe> <nom de la base de données eZ Publish> < extension/ezstaticexport/sql/mysql/schema.sql
+
+Une fois ces tables créées, il n'y a rien à configurer l'extension sait automatiquement sur quelle base de données se connecter.
+
+Moteur de tables
+----------------
+Actuellement le moteur de tables utilisé pour cette extension est MyISAM, il n'est cependant pas exclu d'utiliser InnoDB
+dans un futur proche, cela dépendra de nos contraintes de développement. Cela signifie donc que MySQL doit être compilé
+avec le support InnoDB, ce qui est déjà le cas dans la majeure partie des installation de MySQL.
+
+Taille des tables et maintenance
+--------------------------------
+La taille des tables sera assez faible plusieurs Mo tout au plus, à l'exception d'une table:
+ezstaticexport_log qui elle pourra grossir très vite, voire peser rapidement 1Go.
+Cette table contient les logs des contenus exportés, elle sera donc soumis à beaucoup d'accès en écriture.
+Comme c'est une table SQL, il n'est pas envisageable de fournir un système de rotation des logs comme on pourrait
+le faire avec un simple fichier texte.
+
+Système de fichier et droits d'accès
+------------------------------------
+Le dossier dans lequel va écrire l'extension est configurable:
+
+- Fichier : extension/ezstaticexport/settings/staticexport.ini.append.php
+- Directive : StaticStorageDir
+
+Actuellement la valeur par défaut est :
+
+::
+
+    StaticStorageDir=var/staticexport/
+
+Il est possible de changer le chemin d'écriture, mais il y a cependant une limitation, ce chemin doit
+partir du dossier racine d'eZ Publish. Il n'est pas possible de configurer (directement) l'extension pour
+qu'elle écrive ailleurs que dans le dossier d'installation d'eZ Publish.
+
+Par exemple pour StaticStorageDir=var/staticexport/ cela signifie que l'extension va écrire dans:
+
+::
+
+    ezpublish-root
+    |-- var
+        |-- staticexport
+
+Si toutefois vous souhaitez que les données d'export soient insérées ailleurs, sur un NFS par exemple il est possible de faire
+la chose suivante:
+
+1. créer le dossier /ezpublish-root/var/staticexport
+2. faire pointer /ezpublish-root/var/staticexport sur par exemple /nfs/staticexport
+3. définir StaticStorageDir à var/staticexport
+
+L'utilisateur (système) qui lancera les exports statiques doit avoir les droits d'écriture sur le dossier définit
+via la directive StaticStorageDir. L'utilisateur Apache suffira dans un bon nombre de cas, cependant ceci est à adapter
+au contexte de votre architecture.
+
+Désinstallation de l'extension
+------------------------------
+1. Depuis l'interface d'administration aller dans l'onglet 'Setup' -> 'Extension' -> décocher la case correspondant à 'ezstaticexport' puis valider.
+2. Vider le cache des fichier ini 
+
+::
+
+    rm -rf var/cache/ini
+
+3. Supprimer le dossier contenant l'extension
+
+::
+
+    rm -rf extension/ezstaticexport
+
+4. Supprimer toutes les tables préfixées par "ezstaticexport*"
+
+5. Supprimer le dossier qui contenait les export statiques, donc le dossier définit dans:
+
+- Fichier : ezpublish-root/extension/ezstaticexport/setting/staticexport.ini.append.php
+- Directive : StaticStorageDir=xxxxxx
