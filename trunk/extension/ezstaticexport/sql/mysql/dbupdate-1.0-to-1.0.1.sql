@@ -1,0 +1,1 @@
+ALTER TABLE `ezstaticexport_export` ADD COLUMN `static_resources` TINYINT(1) UNSIGNED ZEROFILL NOT NULL DEFAULT 0 AFTER `user_id`;

@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title></title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 5196 2007-06-03 20:25:28Z wiemann $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="configuration">
+<h1>Configuration</h1>
+<div class="section" id="g-n-ralit-s">
+<h2>Généralités</h2>
+<p>Les paramètres par défaut de l'application sont définis dans le fichier ezstaticexport.ini
+situé dans extension/ezstaticexport/settings.
+L'idéal serait de ne pas modifier le fichier par défaut afin de permettre une migration
+plus facile vers une éventuelle nouvelle version. Cela est possible en surchargeant ce fichier
+globalement, dans settings/override/ezstaticexport.ini.append.php. Le fichier n'existant pas,
+il sera nécessaire de le créer.</p>
+</div>
+<div class="section" id="exportsettings">
+<h2>ExportSettings</h2>
+<p>Ces paramètres sont généraux à tous les exports.</p>
+<div class="section" id="hostname">
+<h3>HostName</h3>
+<p>Définit le le hostname utilisé pour capturer les pages du site. Doit etre connu du serveur web
+(DNS ou fichiers hosts), accessible (attention aux restrictions d'IP, mot de passe, routage...).
+Utiliser lynx depuis le serveur pour vérifier l'accessibilité.</p>
+</div>
+<div class="section" id="staticstoragedir">
+<h3>StaticStorageDir</h3>
+<p>Dossier dans lequel seront placés les fichiers exportés. L'utilisateur du serveur web doit
+avoir accès en écriture à ce dossier.</p>
+</div>
+<div class="section" id="folderprefix">
+<h3>FolderPrefix</h3>
+<p>Ce paramètre permet d'utiliser le module d'export statique lorsque le site est accessible via un sous dossier,
+par exemple localhost/dev/voyazine (eZ est situé dans le dossier voyazine). Dans ce cas précis, il faudra
+indiquer dev/voyazine/index.php/ comme FolderPrefix. Si les règles de rewrite sont correctement configurées,
+le index.php ne sera pas nécessaire.
+Si le site a son  propre nom de domaine avec rewrite, ce paramètre sera vide.</p>
+</div>
+</div>
+<div class="section" id="targetserverlist">
+<h2>TargetServerList</h2>
+<p>Ce bloc de configuration permet de définir les cibles d'export.
+La directive TargetServer contenue dans ce bloc est un tableau définissant les
+cibles. Il est recommandé de surcharger cette directive pour chaque installation
+afin de ne pas conserver les cibles fournies par défaut.
+Le DefaultTargetServer _ défini plus bas _ ne fait pas partie de cette liste
+et sera toujours défini.</p>
+</div>
+<div class="section" id="defaulttargetserversettings">
+<h2>DefaultTargetServerSettings</h2>
+<p>Ce bloc définit les paramètres de la cible d'exporation par défaut.</p>
+<div class="section" id="targetservername">
+<h3>TargetServerName</h3>
+<p>Nom de la cible. Indicatif, n'est pas utilisé au niveau systeme.</p>
+</div>
+<div class="section" id="targetserverurl">
+<h3>TargetServerURL</h3>
+<p>URL de la cible. Indicatif, n'est pas utilisé au niveau systeme.</p>
+</div>
+<div class="section" id="publishingtargets">
+<h3>PublishingTargets</h3>
+<p>Tableau définissant les cibles de publication de l'export statique de la cible.
+Chaque entrée de ce tableau définit une cible. Les paramètres de la cible sont
+indiqués via une syntaxe de type URI.
+Voir la partie concernant la publication pour le détail de cette configuration.</p>
+</div>
+</div>
+<div class="section" id="targetserver-xxx">
+<h2>TargetServer-xxx</h2>
+<p>Pour chaque entrée dans [TargetServerList].TargetServer, un bloc TargetServer-
+doit être créé afin de définir la cible.
+Le bloc doit être nommé TargetServer-cible, cible étant le nom d'une des entrées
+dans [TargetServerList].TargetServer.</p>
+<p>Si ce bloc est configuré:</p>
+<pre class="literal-block">
+[TargetServerList]
+TargetServer[]
+TargetServer[]=cible1
+TargetServer[]=cible2
+</pre>
+<p>deux blocs devront être créés:</p>
+<pre class="literal-block">
+[TargetServer-cible1]
+[TargetServer-cible2]
+</pre>
+<p>Chacun de ces blocs contiendra 3 directives: TargetServerName, TargetServerName
+et PublishingTargets.</p>
+<div class="section" id="id1">
+<h3>TargetServerName</h3>
+<p>Nom de la cible. Indicatif, n'est pas utilisé au niveau systeme.</p>
+</div>
+<div class="section" id="id2">
+<h3>TargetServerURL</h3>
+<p>URL de la cible. Indicatif, n'est pas utilisé au niveau systeme.</p>
+</div>
+<div class="section" id="id3">
+<h3>PublishingTargets</h3>
+<p>Tableau définissant les cibles de publication de l'export statique de la cible.
+Chaque entrée de ce tableau définit une cible. Les paramètres de la cible sont
+indiqués via une syntaxe de type URI.
+Voir la partie concernant la publication pour le détail de cette configuration.</p>
+</div>
+</div>
+</div>
+<div class="section" id="publication">
+<h1>Publication</h1>
+<div class="section" id="id4">
+<h2>Configuration</h2>
+<p>Les cibles de publication sont définies via la directive PublishingTargets des
+cibles d'export. Chaque entrée définit une cible de publication, cette cible
+étant paramétrée via une syntaxe de type URI:</p>
+<pre class="literal-block">
+protocol://login&#64;host:/path/to/folder/;option1,option2,optionN
+</pre>
+<div class="section" id="protocol">
+<h3>protocol</h3>
+<p>Le seul protocole actuellement disponible est rsync.</p>
+</div>
+<div class="section" id="login">
+<h3>login</h3>
+<p>Login à utiliser pour la connexion au serveur distant.</p>
+</div>
+<div class="section" id="host">
+<h3>host</h3>
+<p>Nom de l'hote de publication</p>
+</div>
+<div class="section" id="path-to-folder">
+<h3>/path/to/folder</h3>
+<p>Chemin ou seront placés les fichiers de l'export statique.</p>
+</div>
+<div class="section" id="option">
+<h3>option</h3>
+<p>Une liste d'options à transmettre au protocole de publication, séparées par des
+virgules. Ces options sont définies par protocole.
+Voir la documentation du driver rsync ci-dessous pour les options disponibles et
+la définition de nouvelles options.</p>
+</div>
+</div>
+</div>
+<div class="section" id="rsync">
+<h1>Rsync</h1>
+<p>rsync est à l'heure actuelle le seul protocole de transfert supporté par l'extension.</p>
+<p>Il est configuré via le bloc [DriverSettings-rsync].</p>
+<div class="section" id="driverpath">
+<h2>DriverPath</h2>
+<p>Définit le chemin d'accès au binaire rsync. Il est bien sur impératif que l'utilisateur
+exécutant le cronjob ait accès en exécution à rsync.</p>
+</div>
+<div class="section" id="driverargs">
+<h2>DriverArgs</h2>
+<p>Définit les options passées à rsync.
+Chaque entrée est indexée par le nom de l'option tel qu'utilisable dans le fichier INI,
+et reçoit comme valeur le paramètre ligne de commande (nommage paramètre long, avec --).</p>
+<p>Par exemple:</p>
+<pre class="literal-block">
+DriverArgs[simulation]=dry-run
+</pre>
+<p>Définit une option nommée simulation, qui ajoutera --dry-run à la ligne de commande.</p>
+<p>Les options définies par défaut devraient être suffisantes, mais l'ajout de nouvelles
+options ne pose aucun probleme.</p>
+</div>
+<div class="section" id="authentification">
+<h2>Authentification</h2>
+<p>La seule manière avec les options prédéfinies d'utiliser rscync en publication est
+actuellement de passer par une clé SSH publique/privée, et donc un transfert rsync
+via SSH.</p>
+<p>La publication a été testée via cette méthode et fonctionne correctement.</p>
+<p>Rsync est également utisable pour une publication locale au serveur.
+Il suffit d'utiliser une syntaxe de ce type:</p>
+<pre class="literal-block">
+rsync://localhost/path/to/folder/;recursive,update,compress
+</pre>
+</div>
+</div>
+<div class="section" id="configuration-workflow">
+<h1>Configuration workflow</h1>
+<p>Un évènement de workflow personnalisé a été développé pour permettre le blocage de la
+publication de contenu pendant un export statique. Afin d'etre actif, celui-ci doit
+etre associé à un workflow, et ce workflow associé au trigger pre/publish (exactement
+comme un évènement de type approve).</p>
+<ol class="arabic simple">
+<li>Setup &gt; Workflow</li>
+<li>Groupe de workflow par défaut</li>
+<li>Créer un nouveau workflow</li>
+<li>Ajouter l'évènement &quot;Event / Static export token check&quot;</li>
+<li>Setup &gt; Triggers</li>
+<li>Trigger publish/before, associer le workflow créé précédemment, et confirmer</li>
+</ol>
+</div>
+<div class="section" id="configuration-cronjob">
+<h1>Configuration cronjob</h1>
+<p>Une configuration des cronjobs est nécessaire au bon fonctionnement de l'application.</p>
+<dl class="docutils">
+<dt>Deux scripts cronjob sont fournis avec l'application:</dt>
+<dd><ul class="first last simple">
+<li>staticexport</li>
+<li>interruptexport</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="cronjob-scripts">
+<h2>Cronjob scripts</h2>
+<div class="section" id="staticexport">
+<h3>staticexport</h3>
+<p>Ce script gère les exports planifiés et immédiats et leur publication.</p>
+</div>
+<div class="section" id="interruptexport">
+<h3>interruptexport</h3>
+<p>Ce script est utilisé pour interrompre un éventuel export immédiat dans le cas ou
+un export planifié (ayant donc une priorité supérieure) doit s'exécuter.</p>
+</div>
+</div>
+<div class="section" id="configuration-ini">
+<h2>Configuration INI</h2>
+<p>Ces deux scripts sont automatiquement utilisables une fois l'extension activée.
+Deux groupes de workflow personnalisés sont créés: staticexport, et prestaticexport.
+Toute exécution de cronjob doit automatiquement exécuter ces deux groupes, d'abord
+prestaticexport, suivi de staticexport. Le premier prend soin d'interrompre un
+éventuel export immédiat pour laisser la priorité à un export planifié.</p>
+<p>Avec une syntaxe similaire à celle de ezpublish.cron, la configuration cron est
+similaire à ceci:</p>
+<pre class="literal-block">
+0,15,30,45 * * * * cd $EZPUBLISHROOT &amp;&amp; $PHP runcronjobs.php prestaticexport -q 2&gt;&amp;1 &amp;&amp; $PHP runcronjobs.php staticexport -q 2&gt;&amp;1
+</pre>
+<p>Cela assurera que prestaticexport est toujours exécuté avant staticexport.
+Les deux scripts ne peuvent pas faire partie du meme process du au token d'execution
+des crons qui empeche le chevauchement de deux crons.</p>
+</div>
+</div>
+<div class="section" id="elements-statiques-design">
+<h1>Elements statiques (design)</h1>
+<p>Lors de l'ajout d'une nouvelle cible, il est nécessaire d'initialiser celle-ci.
+Les éléments de design, hors templates, nécessaires au fonctionnement du site
+(images, feuilles de style, javascript) doivent pour cela etre copiés depuis leur
+emplacement initial vers le dossier current de la cible.</p>
+<p>Dans le cas d'une cible nommée &quot;cible1&quot;, le dossier suivant doit etre créé:</p>
+<pre class="literal-block">
+var/staticexport/cible1/current
+</pre>
+<p>Dans ce dossier doivent etre copiés tous les sous éléments de l'intégralité
+des design utilisés par le site, hors templates/ et override/templates.</p>
+<p>Nous trouverons donc dans ce dossier des chemins semblables à:</p>
+<pre class="literal-block">
+var/staticexport/cible1/current/design/mondesign/images/monimage.png
+</pre>
+</div>
+</div>
+</body>
+</html>

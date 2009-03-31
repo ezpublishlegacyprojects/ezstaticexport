@@ -1,0 +1,142 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red74\green74\blue74;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid5}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20100\viewh12280\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\qc\pardirnatural
+
+\f0\b\fs72 \cf0 \ul \ulc0 eZStaticExport\
+
+\fs36 \ulnone Version 1.0.4\
+
+\fs48 \ul \
+\ulnone Ajouts / Modifications NOVEN\ul \
+
+\b0\fs36 \ulnone \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\qr\pardirnatural
+\cf0 Auteur: J\'e9r\'f4me Vieilledent (jerome.vieilledent@noven.fr)\
+Date d'\'e9dition du document : 30/09/2008
+\b\fs48 \ul \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+Installation\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\b0\fs24 \cf0 \ulnone Depuis la version 1.0.2, ex\'e9cuter les scripts de mise \'e0 jour BDD :\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\ql\qnatural\pardirnatural
+\ls1\ilvl0\cf0 {\listtext	\uc0\u8259 	}sql/mysql/dbupdate-1.0.2-to-1.0.3.sql\
+{\listtext	\uc0\u8259 	}sql/mysql/dbupdate-1.0.3-to-1.0.4.sql
+\b\fs48 \ul \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+Multithread\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\b0\fs24 \cf0 \ulnone \
+Le multithread impl\'e9ment\'e9 est en r\'e9alit\'e9 une \'e9mulation dans le sens o\'f9 il n'y a pas de process ma\'eetre. Chaque process est ind\'e9pendant et le contr\'f4le du nombre de threads se fait via la Base de donn\'e9es :\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\ql\qnatural\pardirnatural
+\ls2\ilvl0\cf0 {\listtext	\uc0\u8259 	}Le script est lanc\'e9 par la crontab\
+{\listtext	\uc0\u8259 	}Il v\'e9rifie s'il a le droit de s'ex\'e9cuter (nombre de threads) dans la BDD\
+{\listtext	\uc0\u8259 	}S'il a le droit, il exporte la tranche suivante disponible (nombre de noeuds par lots configurable via la directive NumberOfObjectsToExportInTheSameTime\
+{\listtext	\uc0\u8259 	}S'il n'a pas le droit, le script s'arr\'eate
+\b\fs48 \ul \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+Ex\'e9cution
+\b0\fs24 \ulnone \
+\
+Le lancement de l'export ne passe plus par runcronjobs.php mais par ezexec.php afin de permettre l'ex\'e9cution simultan\'e9e de plusieurs scripts (multithread \'e9mul\'e9), impossible avec runcronjobs.php (lock MUTEX).\
+La ligne de commande \'e0 lancer est donc d\'e9sormais :\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f1 \cf2 php bin/php/ezexec.php extension/ezstaticexport/cronjobs/staticexport.php
+\f0 \cf0 \
+\
+Lors d'un export, il est bon de configurer la Crontab pour le lancer \'e0 chaque minute.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\b\fs48 \cf0 \ul Configuration
+\b0\fs24 \ulnone \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\b\fs36 \cf0 [ExportSettings]
+\b0\fs24 \
+
+\b\fs28 MaxWebServerCallRetry
+\b0\fs24 \
+Dans le cadre d'un export multi-thread, le serveur web peut \'eatre satur\'e9 et \'eatre lent \'e0 r\'e9pondre. Cette directive configure le nombre de fois que PHP doit redemander la page au serveur web en cas de timeout\
+\
+
+\b\fs28 MaxAuthorizedRunningProcesses\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\b0\fs24 \cf0 Nombre maximum de threads possibles. Attention, un nombre trop \'e9lev\'e9 peut avoir de s\'e9rieuses r\'e9percutions sur les performances du serveur, et donc sur le temps d'export\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\b\fs28 \cf0 ExcludeContentClasses
+\b0\fs24 \
+Classes de contenu \'e0 exclure lors de la s\'e9lection des noeuds \'e0 exporter. Particuli\'e8rement utile si le site export\'e9 comprend des \{node_view_gui\} dans ses templates. Permet d'optimiser le temps d'export\
+\
+
+\b\fs28 PreSyncScripts / PostSyncScripts
+\b0\fs24 \
+Scripts \'e0 d\'e9clencher avant/apr\'e8s la synchronisation Rsync. Les scripts doivent \'eatre ex\'e9cutables\
+\
+
+\b\fs36 [LogSettings]
+\b0\fs24 \
+
+\b\fs28 LogHandler
+\b0\fs24 \
+Permet de param\'e9trer le syst\'e8me de log pour l'extension. Valeurs possibles :\
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\ql\qnatural\pardirnatural
+\ls3\ilvl0\cf0 {\listtext	\uc0\u8259 	}ezstaticexportlog\
+{\listtext	\uc0\u8259 	}ezlog\
+\pard\tx560\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+\
+
+\b\fs48 \ul Patch / Optimisation
+\b0\fs24 \ulnone \
+\
+
+\b\fs36 Portage PHP 5
+\b0\fs24 \
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\ql\qnatural\pardirnatural
+\ls4\ilvl0\cf0 {\listtext	\uc0\u8259 	}Modification des appels \'e0 l'API eZPublish\
+{\listtext	\uc0\u8259 	}D\'e9claration des m\'e9thodes statiques\
+{\listtext	\uc0\u8259 	}Utilisation de constantes de classe\
+{\listtext	\uc0\u8259 	}D\'e9finition d'exceptions\
+\pard\tx560\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+Remplacement des boucles foreach sensibles en boucles for, pour limiter les fuites m\'e9moire\
+\
+
+\b\fs36 M\'e9thode eZStaticExport::exportedURLArray()
+\b0\fs24 \
+Commentaire du bloc de code g\'e9rant l'export des noeuds d\'e9pendant (ligne 209). Ce bloc pose des probl\'e8mes de performance avec la gestion d'export par tranche : Les pages d\'e9pendantes sont demand\'e9es plusieurs fois au serveur web (elles ne sont pas gard\'e9es en m\'e9moire)\
+\
+
+\b\fs36 M\'e9thode eZStaticExport::getURLAliases()
+\b0\fs24 \
+Commentaire du bloc de code "Additional URL aliases" pour \'e9viter les multiples appels aux serveur web pour une seule page\
+\
+
+\b\fs36 Divers
+\b0\fs24 \
+\pard\tx220\tx720\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\li720\fi-720\ql\qnatural\pardirnatural
+\ls5\ilvl0\cf0 {\listtext	\uc0\u8259 	}FIX: L'export d'un seul noeud ne fonctionnait plus depuis la mise en place d'export par tranche\
+{\listtext	\uc0\u8259 	}FIX: L'export plannifi\'e9 ne fonctionnait plus depuis la mise en place d'export multithread\
+\ls5\ilvl0{\listtext	\uc0\u8259 	}FIX: Prise en compte de la traduction dans le site.ini de l'extension\
+\pard\tx560\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 \
+\
+}
