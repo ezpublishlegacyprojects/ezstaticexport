@@ -8,7 +8,7 @@ Tabs[]=ezstaticexport
 
 [Topmenu_ezstaticexport]
 NavigationPartIdentifier=ezstaticexportnavigationpart
-Name=Export Statique
+Name=Static export
 Tooltip=Manage static export
 URL[]
 URL[default]=ezstaticexport/list
